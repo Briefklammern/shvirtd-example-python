@@ -1,1 +1,25 @@
-include proxy.yaml
+include:
+  - proxy.yaml
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/mysql
+  web:
+    build:
+      dockerfile: Dockerfile.python
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    env_file:
+     - .env
+    depends_on:
+     - db
