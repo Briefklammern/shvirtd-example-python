@@ -1,7 +1,5 @@
+Dockerfile.python
 README.md
 schema.pdf
 LICENSE
 Dockerfile
-proxy.yaml
-nginx/ingress
-haproxy/reverse
