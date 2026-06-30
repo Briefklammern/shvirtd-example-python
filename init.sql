@@ -1,0 +1,4 @@
+CREATE DATABASE virtd;
+CREATE USER 'app'@'localhost' IDENTIFIED BY 'QwErTy1234';
+GRANT ALL PRIVILEGES ON virtd.* TO 'app'@'localhost';
+FLUSH PRIVILEGES;
